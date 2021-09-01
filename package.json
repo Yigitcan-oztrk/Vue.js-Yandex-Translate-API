@@ -1,8 +1,8 @@
 {
-  "name": "vue-translator",
-  "description": "A Vue.js project",
+  "name": "yandex-api-ile-translate-yapimi",
+  "description": "Yandex API ile Vue.js kullanarak Translate Yapımı",
   "version": "1.0.0",
-  "author": "Yigitcan Ozturk",
+  "author": "gkandemir",
   "license": "MIT",
   "private": true,
   "scripts": {
