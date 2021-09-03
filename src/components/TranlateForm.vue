@@ -1,83 +1,89 @@
 <template>
   <div class="container">
+    <div class="row">
+    <div class="input-group mb-3 col-6" style="display: flex; align-items: center">
+  <input  v-model="selectCity" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+  <button class="btn btn-outline-secondary" @onclick="selectedCity()" type="button" id="button-addon1">Button</button>
+</div>
+</div>
     <div class="col-6">
       <div class="weather-widget">
         <div class="weather-container">
           <div class="weather-overview">
-            <p class="weather-date">{{ result.date }}</p>
+            <p class="weather-date">{{ day0.date }}</p>
             <p class="weather-text">{{ info.city }}</p>
           </div>
           <div class="weather-overview">
-            <img
-              :src="(result.icon)"
-              alt=""
-              style="height: 70px"
-            />
+            <img :src="day0.icon" alt="" style="height: 70px" />
           </div>
           <div
             class="weather-overview"
             style="display: flex; align-items: center"
           >
-            <p class="weather-text">{{ result.degree }}º</p>
+            <p class="weather-text">{{ day0.degree }}º</p>
             <p class="weather-text" style="font-size: 24px; position: relative">
-              {{ result.description }}
+              {{ day0.description }}
             </p>
           </div>
         </div>
         <div class="weather-container">
           <div class="forecast-column">
-            <p class="day-header">SUN</p>
+            <p class="day-header" style="font-size: 12px">{{ day0.date }}</p>
             <p class="forecast-icon"><i class="wi wi-day-sleet-storm"></i></p>
-            <p class="forecast-temp">17º</p>
-            <img
-              :src="(result.icon)"
-              alt=""
-              style="height: 20px"
-            />
+            <p class="forecast-temp">{{ day0.degree }}º</p>
+            <img :src="day0.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day0.description }}</p>
+
           </div>
-          <!-- <div class="forecast-column">
-      <p class="day-header">MON</p>
-      <p class="forecast-icon"><i class="wi wi-day-cloudy"></i></p>
-      <p class="forecast-temp">22º</p>
-      <img  src="https://image.flaticon.com/icons/svg/143/143788.svg" alt="" style="height: 20px;">
-    </div>
-    <div class="forecast-column">
-      <p class="day-header">TUE</p>
-      <p class="forecast-icon"><i class="wi wi-day-sunny"></i></p>
-      <p class="forecast-temp">25º</p>
-      <img  src="https://image.flaticon.com/icons/svg/143/143788.svg" alt="" style="height: 20px;">
-    </div>
-    <div class="forecast-column">
-      <p class="day-header">WED</p>
-      <p class="forecast-icon"><i class="wi wi-day-sunny"></i></p>
-      <p class="forecast-temp">27º</p>
-      <img  src="https://image.flaticon.com/icons/svg/143/143788.svg" alt="" style="height: 20px;">
-    </div>
-    <div class="forecast-column">
-      <p class="day-header">THU</p>
-      <p class="forecast-icon"><i class="wi wi-day-showers"></i></p>
-      <p class="forecast-temp">20º</p>
-      <img  src="https://image.flaticon.com/icons/svg/143/143788.svg" alt="" style="height: 20px;">
-    </div>
-    <div class="forecast-column">
-      <p class="day-header">FRI</p>
-      <p class="forecast-icon"><i class="wi wi-cloudy"></i></p>
-      <p class="forecast-temp">20º</p>
-      <img  src="https://image.flaticon.com/icons/svg/143/143788.svg" alt="" style="height: 20px;">
-    </div>
-    <div class="forecast-column">
-      <p class="day-header">SAT</p>
-      <p class="forecast-icon"><i class="wi wi-day-windy"></i></p>
-      <p class="forecast-temp">25º</p>
-      <img  src="https://image.flaticon.com/icons/svg/143/143788.svg" alt="" style="height: 20px;">
-    </div> -->
+          <div class="forecast-column">
+            <p class="day-header" style="font-size: 12px">{{ day1.date }}</p>
+            <p class="forecast-icon"><i class="wi wi-day-cloudy"></i></p>
+            <p class="forecast-temp">{{ day1.degree }}º</p>
+            <img :src="day1.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day1.description }}</p>
+          </div>
+          <div class="forecast-column">
+            <p class="day-header" style="font-size: 12px">{{ day2.date }}</p>
+            <p class="forecast-icon"><i class="wi wi-day-sunny"></i></p>
+            <p class="forecast-temp">{{ day2.degree }}º</p>
+            <img :src="day2.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day2.description }}</p>
+          </div>
+          <div class="forecast-column">
+            <p class="day-header" style="font-size: 12px">{{ day3.date }}</p>
+            <p class="forecast-icon"><i class="wi wi-day-sunny"></i></p>
+            <p class="forecast-temp">{{ day3.degree }}º</p>
+            <img :src="day3.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day3.description }}</p>
+          </div>
+          <div class="forecast-column">
+            <p class="day-header" style="font-size: 12px">{{ day4.date }}</p>
+            <p class="forecast-icon"><i class="wi wi-day-showers"></i></p>
+            <p class="forecast-temp">{{ day4.degree }}º</p>
+            <img :src="day4.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day4.description }}</p>
+          </div>
+          <div class="forecast-column">
+            <p class="day-header" style="font-size: 12px">{{ day5.date }}</p>
+            <p class="forecast-icon"><i class="wi wi-cloudy"></i></p>
+            <p class="forecast-temp">{{ day5.degree }}º</p>
+            <img :src="day5.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day5.description }}</p>
+          </div>
+          <div class="forecast-column">
+            <p class="day-header" style="font-size: 12px">{{ day6.date }}</p>
+            <p class="forecast-icon"><i class="wi wi-day-windy"></i></p>
+            <p class="forecast-temp">{{ day6.degree }}º</p>
+            <img :src="day6.icon" alt="" style="height: 20px" />
+            <p class="forecast-temp">{{ day6.description }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-// https://image.flaticon.com/icons/svg/143/143788.svg
+
 
 <script>
 import axios from "axios";
@@ -87,19 +93,26 @@ export default {
       translateText: "",
       translateTo: "",
       info: [],
-      result: [],
+      day0: [],
+      day1: [],
+      day2: [],
+      day3: [],
+      day4: [],
+      day5: [],
+      day6: [],
+      city:'bursa'
     };
   },
   methods: {
-    translateIt() {
-      alert(this.translateTo);
-      alert(this.translateText);
-    },
+selectedCity(){
+  this.city = selectCity
+alert(this.city)
+},
   },
   mounted() {
     axios
       .get(
-        "https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=bursa",
+        "https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city="+this.city,
         {
           headers: {
             Authorization: `apikey 0SqN7rZI2rmDGyfMrWGuS9:26EubLZxIVmmf1lOEiYWCs`,
@@ -110,25 +123,13 @@ export default {
       .then((res) => {
         console.log(res.data);
         this.info = res.data;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  },
-  mounted() {
-    axios
-      .get(
-        "https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=bursa",
-        {
-          headers: {
-            Authorization: `apikey 0SqN7rZI2rmDGyfMrWGuS9:26EubLZxIVmmf1lOEiYWCs`,
-            Content: "text/plain; charset=utf-8",
-          },
-        }
-      )
-      .then((res) => {
-        this.info = res.data;
-        this.result = res.data.result[0];
+        this.day0 = res.data.result[0];
+        this.day1 = res.data.result[1];
+        this.day2 = res.data.result[2];
+        this.day3 = res.data.result[3];
+        this.day4 = res.data.result[4];
+        this.day5 = res.data.result[5];
+        this.day6 = res.data.result[6];
       })
       .catch((error) => {
         console.error(error);
