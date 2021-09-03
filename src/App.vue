@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-center">Vue-Translator</h1>
+    <h1 class="text-center">Too-do List</h1>
     <h5 class="text-center">Vur.js İle Translator</h5>
     <br />
     <div class="row">
@@ -17,10 +17,16 @@
 <script>
 import TranslateForm from "./components/TranlateForm.vue";
 import SearchHistory from "./components/SearchHistory.vue";
+
 export default {
   components: {
     TranslateForm,
     SearchHistory,
+  },
+  data() {
+    return{
+
+    }
   },
 };
 </script>
