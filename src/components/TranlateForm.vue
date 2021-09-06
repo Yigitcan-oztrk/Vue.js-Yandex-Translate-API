@@ -1,12 +1,7 @@
 <template>
   <div class="container">
-    <div class="row">
-    <div class="input-group mb-3 col-6" style="display: flex; align-items: center">
-  <input  v-model="selectCity" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-  <button class="btn btn-outline-secondary" @onclick="selectedCity()" type="button" id="button-addon1">Button</button>
-</div>
-</div>
-    <div class="col-6">
+  <div class="row">
+    <div class="col-12 position-absolute top-0 start-50 translate-middle">
       <div class="weather-widget">
         <div class="weather-container">
           <div class="weather-overview">
@@ -80,6 +75,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -158,6 +154,8 @@ body {
   border-radius: 2px;
   border-color: rgba(255, 255, 255, 0.15);
   border-width: 2px;
+  justify-content: center;
+margin-left: 20%;
 }
 
 .weather-container {
