@@ -6,32 +6,33 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <TranslateForm />
-
-        <h3 class="text-succes text-center"></h3>
-      
+    <br />
+        <h5 class="text-succes text-center">Corona result</h5>
+    <br />
+        <CoronaResult />
       </div>
     </div>
+    
   </div>
 </template>
 
 <script>
 import TranslateForm from "./components/TranlateForm.vue";
 import SearchHistory from "./components/SearchHistory.vue";
-
+import CoronaResult from "./components/CoronaResult.vue";
 export default {
   components: {
     TranslateForm,
     SearchHistory,
+    CoronaResult,
   },
   data() {
-    return{
-
-    }
+    return {};
   },
 };
 </script>
 <style>
-body{
+body {
   background-color: #dedede;
 }
 </style>
