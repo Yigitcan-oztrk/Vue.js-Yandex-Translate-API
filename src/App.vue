@@ -7,8 +7,11 @@
       <div class="col-md-12 text-center">
         <TranslateForm />
     <br />
-        <h5 class="text-succes text-center">Corona result</h5>
+        <h5 class="text-succes text-center">Eczane</h5>
+        <SearchHistory />
     <br />
+
+        <h5 class="text-succes text-center">Corona result</h5>
         <CoronaResult />
       </div>
     </div>
